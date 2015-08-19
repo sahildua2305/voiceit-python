@@ -1,9 +1,10 @@
 #VoiceIt Python Wrapper
 =========================
-##Installation
-=========================
+
+## Installation
 To install Requests, simply:
 
-.. code-block:: bash
+Install from PyPi using [pip](http://www.pip-installer.org/en/latest/), a
+package manager for Python.
 
-    $ pip install requests
+pip install requests
