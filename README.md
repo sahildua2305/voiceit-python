@@ -1,10 +1,6 @@
-#VoiceIt Python Wrapper
-=========================
+#VoiceIt Python wrapper
+=======================
 
-## Installation
-To install Requests, simply:
-
-Install from PyPi using [pip](http://www.pip-installer.org/en/latest/), a
-package manager for Python.
-
-pip install requests
+First make sure you have the Requests library installed
+Install using
+`pip install requests`
