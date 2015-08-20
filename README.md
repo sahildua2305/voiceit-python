@@ -9,7 +9,7 @@ pip install Requests
 Then simply download the [VoiceIt Python Library](https://github.com/voiceittech/voiceit-python/archive/master.zip) which includes all
 dependencies.
 
-#usage
+##Usage
 Then initialize a VoiceIt Object like this
 ```python
 from VoiceIt import *
