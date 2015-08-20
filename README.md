@@ -10,7 +10,7 @@ Then simply download the [VoiceIt Python Library](https://github.com/voiceittech
 dependencies.
 
 ##Usage
-Then initialize a VoiceIt Object like this
+Then initialize a VoiceIt Object like this with your own developer id
 ```python
 from VoiceIt import *
 myVoiceIt = VoiceIt("123456")
