@@ -5,6 +5,15 @@ First make sure you have the [Requests](http://www.python-requests.org/en/latest
 ```
 pip install Requests
 ```
-##Getting Started
-Then simply download the VoiceIt.py library [VoiceIt Python Class](https://github.com/voiceittech/voiceit-python/raw/master/VoiceIt.py) which includes all
+##Setup
+Then simply download the [VoiceIt Python Library](https://github.com/voiceittech/voiceit-python/archive/master.zip) which includes all
 dependencies.
+
+#usage
+Then initialize a VoiceIt Object like this
+```python
+from VoiceIt import *
+myVoiceIt = VoiceIt("123456")
+```
+
+Finally use all other API Calls as documented on the [VoiceIt API Documentation](https://siv.voiceprintportal.com/getstarted.jsp/#apidocs) page.
