@@ -6,5 +6,5 @@ First make sure you have the Requests library installed. Install from PyPi using
 pip install Requests
 ```
 ##Getting Started
-Then simply download the VoiceIt.py library [Click here to download the source](https://github.com/voiceittech/voiceit-python/raw/master/VoiceIt.py) which includes all
+Then simply download the VoiceIt.py library <a href="https://github.com/voiceittech/voiceit-python/raw/master/VoiceIt.py" download> VoiceIt Python Class </a> which includes all
 dependencies.
