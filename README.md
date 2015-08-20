@@ -16,4 +16,4 @@ from VoiceIt import *
 myVoiceIt = VoiceIt("123456")
 ```
 
-Finally use all other API Calls as documented on the [VoiceIt API Documentation](https://siv.voiceprintportal.com/getstarted.jsp/#apidocs) page.
+Finally use all other API Calls as documented on the [VoiceIt API Documentation](https://siv.voiceprintportal.com/getstarted.jsp#apidocs) page.
