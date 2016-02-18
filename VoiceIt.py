@@ -9,6 +9,9 @@ class VoiceIt:
     urlUsers = 'https://siv.voiceprintportal.com/sivservice/api/users'
     urlEnrollments = 'https://siv.voiceprintportal.com/sivservice/api/enrollments'
     urlAuthentication = 'https://siv.voiceprintportal.com/sivservice/api/authentications'
+    # urlUsers = 'http://localhost:8080/sivservice/api/users'
+    # urlEnrollments = 'http://localhost:8080/sivservice/api/enrollments'
+    # urlAuthentication = 'http://localhost:8080/sivservice/api/authentications'
 
     def getSHA256(self, strData):
         return hashlib.sha256(strData).hexdigest()
@@ -21,7 +24,7 @@ class VoiceIt:
     def createUser(self, mail, passwd, firstName, lastName, phone1="", phone2="", phone3=""):
         email = mail
         password = self.getSHA256(passwd)
-        headers = {'Content-Type': 'application/json', "VsitEmail": email, "VsitPassword": password, "VsitDeveloperId": self.developerId,
+        headers = {'PlatformID': '2', 'Content-Type': 'application/json', "VsitEmail": email, "VsitPassword": password, "VsitDeveloperId": self.developerId,
                    "VsitFirstName": firstName, "VsitLastName": lastName, "VsitPhone1": phone1, "VsitPhone2": phone2, "VsitPhone3": phone3}
         response = ""
         try:
@@ -33,7 +36,7 @@ class VoiceIt:
     def deleteUser(self, mail, passwd):
         email = mail
         password = self.getSHA256(passwd)
-        headers = {'Content-Type': 'application/json', "VsitEmail": email,
+        headers = {'PlatformID': '2', 'Content-Type': 'application/json', "VsitEmail": email,
                    "VsitPassword": password, "VsitDeveloperId": self.developerId}
         response = ""
         try:
@@ -45,7 +48,7 @@ class VoiceIt:
     def getUser(self, mail, passwd):
         email = mail
         password = self.getSHA256(passwd)
-        headers = {'Content-Type': 'application/json', "VsitEmail": email,
+        headers = {'PlatformID': '2', 'Content-Type': 'application/json', "VsitEmail": email,
                    "VsitPassword": password, "VsitDeveloperId": self.developerId}
         response = ""
         try:
@@ -57,7 +60,7 @@ class VoiceIt:
     def setUser(self, mail, passwd, firstName, lastName, phone1="", phone2="", phone3=""):
         email = mail
         password = self.getSHA256(passwd)
-        headers = {'Content-Type': 'application/json', "VsitEmail": email, "VsitPassword": password, "VsitDeveloperId": self.developerId,
+        headers = {'PlatformID': '2', 'Content-Type': 'application/json', "VsitEmail": email, "VsitPassword": password, "VsitDeveloperId": self.developerId,
                    "VsitFirstName": firstName, "VsitLastName": lastName, "VsitPhone1": phone1, "VsitPhone2": phone2, "VsitPhone3": phone3}
         response = ""
         try:
@@ -70,7 +73,7 @@ class VoiceIt:
         email = mail
         password = self.getSHA256(passwd)
         wavData = open(pathToEnrollmentWav, 'rb').read()
-        headers = {'Content-Type': 'audio/wav', "VsitEmail": email,
+        headers = {'PlatformID': '2', 'Content-Type': 'audio/wav', "VsitEmail": email,
                    "VsitPassword": password, "VsitDeveloperId": self.developerId, "ContentLanguage":contentLanguage}
         response = ""
         try:
@@ -83,7 +86,7 @@ class VoiceIt:
     def createEnrollmentByWavURL(self, mail, passwd, urlToEnrollmentWav, contentLanguage=""):
         email = mail
         password = self.getSHA256(passwd)
-        headers = {'Content-Type': 'audio/wav', "VsitEmail": email, "VsitPassword": password,
+        headers = {'PlatformID': '2', 'Content-Type': 'audio/wav', "VsitEmail": email, "VsitPassword": password,
                    "VsitDeveloperId": self.developerId, "VsitwavURL": urlToEnrollmentWav, "ContentLanguage":contentLanguage}
         response = ""
         try:
@@ -96,7 +99,7 @@ class VoiceIt:
     def getEnrollments(self, mail, passwd):
         email = mail
         password = self.getSHA256(passwd)
-        headers = {'Content-Type': 'application/json', "VsitEmail": email,
+        headers = {'PlatformID': '2', 'Content-Type': 'application/json', "VsitEmail": email,
                    "VsitPassword": password, "VsitDeveloperId": self.developerId}
         response = ""
         try:
@@ -108,7 +111,7 @@ class VoiceIt:
     def deleteEnrollment(self, mail, passwd, enrollmentId):
         email = mail
         password = self.getSHA256(passwd)
-        headers = {'Content-Type': 'application/json', "VsitEmail": email,
+        headers = {'PlatformID': '2', 'Content-Type': 'application/json', "VsitEmail": email,
                    "VsitPassword": password, "VsitDeveloperId": self.developerId}
         response = ""
         try:
@@ -122,7 +125,7 @@ class VoiceIt:
         email = mail
         password = self.getSHA256(passwd)
         wavData = open(pathToAuthenticationWav, 'rb').read()
-        headers = {'Content-Type': 'audio/wav', "VsitEmail": email, "VsitPassword": password, "VsitDeveloperId": self.developerId,
+        headers = {'PlatformID': '2', 'Content-Type': 'audio/wav', "VsitEmail": email, "VsitPassword": password, "VsitDeveloperId": self.developerId,
                    "VsitAccuracy": accuracy, "VsitAccuracyPasses": accuracyPasses, "VsitAccuracyPassIncrement": accuracyPassIncrement, "VsitConfidence": confidence, "ContentLanguage":contentLanguage}
         response = ""
         try:
@@ -135,7 +138,7 @@ class VoiceIt:
     def authenticationByWavURL(self, mail, passwd, urlToAuthenticationWav, accuracy, accuracyPasses, accuracyPassIncrement, confidence, contentLanguage=""):
         email = mail
         password = self.getSHA256(passwd)
-        headers = {'Content-Type': 'audio/wav', "VsitEmail": email, "VsitPassword": password, "VsitDeveloperId": self.developerId, "VsitwavURL": urlToAuthenticationWav,
+        headers = {'PlatformID': '2', 'Content-Type': 'audio/wav', "VsitEmail": email, "VsitPassword": password, "VsitDeveloperId": self.developerId, "VsitwavURL": urlToAuthenticationWav,
                    "VsitAccuracy": accuracy, "VsitAccuracyPasses": accuracyPasses, "VsitAccuracyPassIncrement": accuracyPassIncrement, "VsitConfidence": confidence, "ContentLanguage":contentLanguage}
         response = ""
         try:
