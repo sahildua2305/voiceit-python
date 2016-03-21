@@ -9,9 +9,6 @@ class VoiceIt:
     urlUsers = 'https://siv.voiceprintportal.com/sivservice/api/users'
     urlEnrollments = 'https://siv.voiceprintportal.com/sivservice/api/enrollments'
     urlAuthentication = 'https://siv.voiceprintportal.com/sivservice/api/authentications'
-    # urlUsers = 'http://localhost:8080/sivservice/api/users'
-    # urlEnrollments = 'http://localhost:8080/sivservice/api/enrollments'
-    # urlAuthentication = 'http://localhost:8080/sivservice/api/authentications'
 
     def getSHA256(self, strData):
         return hashlib.sha256(strData).hexdigest()
